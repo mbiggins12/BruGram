@@ -1,0 +1,28 @@
+<% if @photo.errors.any? %>
+  <h2>
+    <%= pluralize(@photo.errors.count, "error") %>
+    prohibited this photo from being saved
+  </h2>
+  
+  <ul>
+    <% @photo.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @photo do |f| %>
+  <p>
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
+  </p>
+ 
+  <p>
+    <%= f.label :caption %><br>
+    <%= f.text_area :caption %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

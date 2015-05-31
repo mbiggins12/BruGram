@@ -1,0 +1,18 @@
+<h1>BruGram Photo</h1>
+
+<%= image_tag @photo.image %>
+
+<p>
+	<strong><%= @photo.caption %></strong>
+</p>
+
+<h3>Comments</h3>
+<%= render @photo.comments %>
+
+<h3>Add a comment:</h3>
+<%= render 'comments/form' %>
+
+<p>
+	<%= link_to 'Home', photos_path %>
+	<%= link_to 'Update', edit_photo_path %>
+</p>
